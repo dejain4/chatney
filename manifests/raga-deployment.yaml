@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: rasa-chatbot
-          image: rasa-chatbot:latest
+          image: dejain4/rasa-chatbot:latest
           ports:
             - containerPort: 5005
