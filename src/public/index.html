@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rasa Chatbot</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>Rasa Chatbot</h1>
+    <div id="chat-container"></div>
+    <form id="message-form">
+      <input type="text" id="message-input" placeholder="Type your message..." />
+      <button type="submit">Send</button>
+    </form>
+
+    <script>
+      const chatContainer = document.getElementById('chat-container');
+      const messageForm = document.getElementById('message-form');
+      const messageInput = document.getElementById('message-input');
+
+      messageForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const message = messageInput.value.trim();
+        if (!message) return;
+
+        const response = await axios.post('/send-message', { message });
+        const messages = response.data;
+
+        messages.forEach((msg) => {
+          const chatBubble = document.createElement('div');
+          chatBubble.className = 'chat-bubble';
+          chatBubble.textContent = msg.text;
+          chatContainer.appendChild(chatBubble);
+        });
+
+        messageInput.value = '';
+      });
+    </script>
+  </body>
+</html>

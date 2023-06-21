@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rasa-chatbot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rasa-chatbot
+  template:
+    metadata:
+      labels:
+        app: rasa-chatbot
+    spec:
+      containers:
+        - name: rasa-chatbot
+          image: rasa-chatbot:latest
+          ports:
+            - containerPort: 5005
