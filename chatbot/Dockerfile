@@ -7,9 +7,6 @@ COPY . /app
 # Switch to the app directory
 WORKDIR /app
 
-# Train the Rasa models outside of the Dockerfile
-RUN ["rasa", "train"]
-
 # Expose the Rasa server port
 EXPOSE 5005
 
