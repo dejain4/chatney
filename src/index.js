@@ -9,7 +9,7 @@ app.use(express.static('public'));
 
 app.post('/send-message', async (req, res) => {
   try {
-    const response = await axios.post('http://<rasa_server_ip>:5005/webhooks/rest/webhook', {
+    const response = await axios.post('http://206.189.246.142/webhooks/rest/webhook', {
       message: req.body.message,
     });
     res.json(response.data);

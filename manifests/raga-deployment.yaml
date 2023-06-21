@@ -15,5 +15,6 @@ spec:
       containers:
         - name: rasa-chatbot
           image: dejain4/rasa-chatbot:latest
+          command: ["rasa", "run", "--enable-api"]
           ports:
             - containerPort: 5005
