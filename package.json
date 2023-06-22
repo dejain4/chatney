@@ -1,7 +1,7 @@
 {
   "name": "chatney",
   "version": "1.0.0",
-  "description": "Chatney is an open-source chatbot application built using Rasa and Node.js",
+  "description": "Chatney is an open-source chatbot application built using Rasa and Node.js.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
